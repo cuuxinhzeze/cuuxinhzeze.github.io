@@ -34,10 +34,10 @@
 
         L.marker([15.764200, 108.400884], {
             icon: love
-        }).addTo(mymap).bindPopup("<b>Chúc mừng sinh nhật!</b><br>Hôm nay là ngày sinh nhật lần thứ bao nhiêu rồi nhờ, 22 tuổi hả hay 23 tuổi =)), thôi kệ nó đi, nói chung là sinh nhật này ze có cừu bên cạnh, tuy không bên cạnh về khoảng cách địa lý nhưng gần nhau về tình cảm, về sự thương mến.<br><strong>Bây giờ z thử đi tìm nơi tiếp theo coi, z nghĩ là ở đâu</strong>.").openPopup();
+        }).addTo(mymap).bindPopup("<b>Chúc mừng sinh nhật!</b><br>Hôm nay là ngày sinh nhật lần thứ bao nhiêu rồi nhờ, 22 tuổi hả hay 23 tuổi =)), thôi kệ nó đi, nói chung là sinh nhật này ze có cừu bên cạnh, tuy không bên cạnh về khoảng cách địa lý nhưng gần nhau về tình cảm, về sự thương mến.<br><strong>Bây giờ z thử đi tìm nơi tiếp theo coi, z nghĩ là ở đâu</strong>, bật mí là phải đi lên, cái chỗ đó cũng cso hình trái tim đó.").openPopup();
         var cautinhyeu = L.marker([16.063494, 108.229529],{
             icon: love
-        }).addTo(mymap).bindPopup("A.... tìm ra rồi, giỏi quá, vỗ tay pặc pặc, nơi tình yêu chớm nở là hồi nào hề, 30-6 hề, Ề đáng lý ra là <strong>nhà trọ</strong> của z đúng không, nhưng mà lần đầu tiên mà bảo nhà trọ của z thì kì quá nên là ở cầu Tình yêu cho nó oách, nó hoành tráng!Ahihihiiii.<br><iframe src='image-slider.slider/cautinhyeu.html'></iframe><br><a href='javascript:void(0)' onclick='phongtro();'>....</a>");
+        }).addTo(mymap).bindPopup("A.... tìm ra rồi, giỏi quá, vỗ tay pặc pặc, nơi tình yêu chớm nở là hồi nào hề, 30-6 hề, Ề đáng lý ra là <strong>nhà trọ</strong> của z đúng không, nhưng mà lần đầu tiên mà bảo nhà trọ của z thì kì quá nên là ở cầu Tình yêu cho nó oách, nó hoành tráng, nơi này có nhiều kỷ niệm quá ha, mỗi lần đi đâu ra ĐN chơi thì ít nhiều cũng phải ghé nơi đây, nó mang ý nghĩa thiêng liên đó chứ - cầu tình yêu - NƠI CHỨNG NHẬN TÌNH YÊU.<br><iframe src='image-slider.slider/cautinhyeu.html'></iframe><br><a href='javascript:void(0)' onclick='phongtro();'>Nhấn vào đây</a>");
         cautinhyeu.on('click', function() {
             
             mymap.setZoom(17);
@@ -45,11 +45,23 @@
         });
 
         function phongtro() {
-            mymap.flyTo([16.049161, 108.239053]);
-            L.marker([16.049161, 108.239053],{
-            icon: love
-        }).addTo(mymap).bindPopup("Oh hay quá, đây là đâu, bà ngơ ngơ lắm, cho ngồi suy nghĩ 5 phút đó, nơi đây tính ra thì nhiều kỷ niệm thật ha, dù muốn hay không thì cũng xảy ra quá nhiều kỷ niệm ở nơi đâu rồi, dù ước muốn của bạn ấy là một bờ biển dài và rộng, cát trắng gió thổi...<br><iframe src='image-slider.slider/nhatro.html'></iframe>");
+            fly([16.049161, 108.239053],"Oh hay quá, đây là đâu, bà ngơ ngơ lắm, cho ngồi suy nghĩ 5 phút đó, nơi đây tính ra thì nhiều kỷ niệm thật ha, dù muốn hay không thì cũng xảy ra quá nhiều kỷ niệm ở nơi đâu rồi, dù ước muốn của bạn ấy là một bờ biển dài và rộng, cát trắng gió thổi...<br><iframe src='image-slider.slider/nhatro.html'></iframe><br><a href='javascript:void(0)' onclick='bien();'>Nhấn vào đây</a>")
         }
+        function bien(){
+            fly([16.070404, 108.245714],
+                "Chỗ này bạn Ze thích lắm, thích nụ hôn đầu tiên phải là ở biển kia, nhưng mà thất bại rồi, ai bảo không nói trước làm chi, những lúc ra ĐN nhưng không biết tiếp theo phải đi đâu thì thường ghé nơi đây, đa phần đều ghé vào buổi tối thôi à, tại buổi tối cho nó đẹpppppp, vào SG này không có biển, có thì cũng nhớp nghí đen thui à, nhớ người yêu, nhớ biển.<br><img src='image-slider.slider/img/danang/bien1.jpg' width='270px'/>"
+               );
+        }
+        function fly(toaDo,noiDung){
+            mymap.flyTo(toaDo);
+            L.marker(toaDo,{
+            icon: love
+        }).addTo(mymap).bindPopup(noiDung);
+        }
+        //lang bich hoa 15.6015091,108.5426936,17
+        //duy xuyen 15.826579, 108.217900
+        //cau cua dai 5.865225,108.3743381,694
+        //cao toc 15.797605, 108.404538
 
     </script>
 </body>
