@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chúc mừng sinh nhật em, người con gái tôi thương.</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <style>
+        #mapid {
+            height: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="mapid"></div>
+    <script>
+        var mymap = L.map('mapid').setView([15.764200, 108.400884], 17);
+        L.tileLayer(
+            'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Cừu xinh <3 Ze ze',
+                maxZoom: 17,
+                minZoom: 12,
+                id: 'your.mapbox.project.id',
+                accessToken: 'your.mapbox.public.access.token'
+            }).addTo(mymap);
+
+        var love = L.icon({
+            iconUrl: 'love.png',
+
+            iconSize: [15, 15]
+        });
+
+        L.marker([15.764200, 108.400884], {
+            icon: love
+        }).addTo(mymap).bindPopup("<b>Chúc mừng sinh nhật!</b><br>Hôm nay là ngày sinh nhật lần thứ bao nhiêu rồi nhờ, 22 tuổi hả hay 23 tuổi =)), thôi kệ nó đi, nói chung là sinh nhật này ze có cừu bên cạnh, tuy không bên cạnh về khoảng cách địa lý nhưng gần nhau về tình cảm, về sự thương mến.<br><strong>Bây giờ z thử đi tìm nơi tiếp theo coi, z nghĩ là ở đâu</strong>.").openPopup();
+        var cautinhyeu = L.marker([16.063494, 108.229529],{
+            icon: love
+        }).addTo(mymap).bindPopup("A.... tìm ra rồi, giỏi quá, vỗ tay pặc pặc, nơi tình yêu chớm nở là hồi nào hề, 30-6 hề, Ề đáng lý ra là <strong>nhà trọ</strong> của z đúng không, nhưng mà lần đầu tiên mà bảo nhà trọ của z thì kì quá nên là ở cầu Tình yêu cho nó oách, nó hoành tráng!Ahihihiiii.<br><iframe src='image-slider.slider/cautinhyeu.html'></iframe><br><a href='javascript:void(0)' onclick='phongtro();'>....</a>");
+        cautinhyeu.on('click', function() {
+            
+            mymap.setZoom(17);
+            mymap.panTo([16.063494, 108.229529]);
+        });
+
+        function phongtro() {
+            mymap.flyTo([16.049161, 108.239053]);
+            L.marker([16.049161, 108.239053],{
+            icon: love
+        }).addTo(mymap).bindPopup("Oh hay quá, đây là đâu, bà ngơ ngơ lắm, cho ngồi suy nghĩ 5 phút đó, nơi đây tính ra thì nhiều kỷ niệm thật ha, dù muốn hay không thì cũng xảy ra quá nhiều kỷ niệm ở nơi đâu rồi, dù ước muốn của bạn ấy là một bờ biển dài và rộng, cát trắng gió thổi...<br><iframe src='image-slider.slider/nhatro.html'></iframe>");
+        }
+
+    </script>
+</body>
+
+</html>
